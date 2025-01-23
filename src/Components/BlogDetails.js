@@ -4,14 +4,15 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import blogImage1 from '../Images/blog-1.jpg';
+import { Link } from 'react-router-dom';
 
 const BlogDetails = () => {
   return (
         <>
             <div className='bg-black p-5 space-y-5'>
-                <button className='text-lg text-white'>
-                    <IoChevronBack className='inline' /> Back To Insights
-                </button>
+                <Link className='text-lg text-white flex items-center' to='/'>
+                    <IoChevronBack className='inline mr-1' /> Back To Insights
+                </Link>
                 <button className='p-2 rounded-md uppercase bg-white block text-xs mt-3'>
                     Autonomous Retail
                 </button>

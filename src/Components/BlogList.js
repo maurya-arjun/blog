@@ -9,7 +9,7 @@ const BlogList = ( {blogList} ) => {
     blogList.map((blog, index) => (
         <div className='md:flex md:flex-wrap mb-20 md:space-x-8 p-5 hover:lg:shadow-lg shadow-lg lg:shadow-none' key={index}>
             <div className='flex-shrink-0 md:w-1/2'>
-                <Link to="/blogDetails" target='_blank'>
+                <Link to="/blogDetails">
                     <img src={blog.blogImage} alt='Blog-Image' />
                 </Link>
             </div>
@@ -33,7 +33,7 @@ const BlogList = ( {blogList} ) => {
                     </div>
                 </div>
                 <div className='text-lg'>
-                    <Link to="/blogDetails" target='_blank'>
+                    <Link to="/blogDetails">
                         <h1 className='text-xl md:text-2xl mt-5 mb-5 font-bold lg:text-3xl'>
                             {blog.blogTitle}
                         </h1>
