@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 const BlogList = ( {blogList} ) => {
   return (
     blogList.map((blog, index) => (
-        <div className='md:flex md:flex-wrap mb-20 md:space-x-8 p-5 hover:lg:shadow-lg shadow-lg lg:shadow-none' key={index}>
+        <div className='md:flex md:flex-wrap mb-20 mt-10 md:space-x-8 p-5 hover:lg:shadow-lg shadow-lg lg:shadow-none' key={index}>
             <div className='flex-shrink-0 md:w-1/2'>
                 <Link to="/blogDetails">
-                    <img src={blog.blogImage} alt='Blog-Image' />
+                    <img src={blog.blogImage} alt='Blog-Image' className='w-full' />
                 </Link>
             </div>
             <div className='mt-5 md:mt-0 flex-1'>
@@ -24,11 +24,20 @@ const BlogList = ( {blogList} ) => {
                                 Autonomous Retail
                             </button>
                         </div>
-                        <div className='space-x-3'>
-                            <span className='text-sm'>Share on: </span>
-                            <FaLinkedinIn className='inline hover:text-orange-600 cursor-pointer text-lg' />
-                            <FaFacebook className='inline hover:text-orange-600 cursor-pointer text-lg' />
-                            <FaXTwitter className='inline hover:text-orange-600 cursor-pointer text-lg' />
+                        <div className="space-x-0 flex items-center">
+                            <span className="text-sm">Share on:</span>
+                            {[
+                                <FaLinkedinIn className="hover:text-orange-600 cursor-pointer text-lg ml-3" />,
+                                <FaFacebook className="hover:text-orange-600 cursor-pointer text-lg" />,
+                                <FaXTwitter className="hover:text-orange-600 cursor-pointer text-lg" />,
+                            ].map((icon, index, arr) => (
+                                <span key={index} className="flex items-center">
+                                    {icon}
+                                    {index !== arr.length - 1 && (
+                                        <span className="mx-2 bg-gray-400 inline-block w-[1px] h-[20px]"></span>
+                                    )}
+                                </span>
+                            ))}
                         </div>
                     </div>
                 </div>

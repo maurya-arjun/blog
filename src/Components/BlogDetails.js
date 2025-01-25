@@ -10,19 +10,24 @@ const BlogDetails = () => {
     const [activeSection, setActiveSection] = useState("");
 
     useEffect(() => {
+
+        // Function to check the screen width
+        const isMdDevice = () => window.innerWidth >= 768;
+
+        if ((!isMdDevice)) return;
+
         const sections = document.querySelectorAll("section");
     
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-                console.log(entry.isIntersecting);
               if (entry.isIntersecting) {
-                console.log(entry.target.id);
                 setActiveSection(entry.target.id);
               }
             });
           },
-          { threshold: 0.1 } // Trigger when 60% of the section is visible
+        //   { threshold: 0.3 } // Trigger when 60% of the section is visible
+        { rootMargin: "-300px" }
         );
     
         sections.forEach((section) => observer.observe(section));
@@ -31,7 +36,7 @@ const BlogDetails = () => {
       }, []);
   return (
         <>
-            <div className='bg-black p-5 space-y-5 lg:m-5'>
+            <div className='bg-black p-5 space-y-5 lg:m-5 lg:mt-0 md:h-screen lg:h-auto lg:p-10 rounded-br-full'>
                 <Link className='text-lg text-white flex items-center' to='/'>
                     <IoChevronBack className='inline mr-1' /> Back To Insights
                 </Link>
@@ -61,25 +66,25 @@ const BlogDetails = () => {
                 <div className='m-5 md:w-[30%] md:order-2 md:top-0 md:left-0 md:h-screen'>
                     <h1 className='text-4xl mb-5'>Table of Content</h1>
                     <ul className='list-disc ml-5 space-y-3 text-lg'>
-                        <li className={`${activeSection === 'overview' ? 'font-bold' : ''}`}>
+                        <li className={`${activeSection === 'overview' ? 'md:font-bold' : ''}`}>
                             <a href='#overview' className='hover:text-orange-600'>
                                 Overview
                             </a>
                         </li>
                         <hr />
-                        <li className={`${activeSection === 'success-stories' ? 'font-bold' : ''}`}>
+                        <li className={`${activeSection === 'success-stories' ? 'md:font-bold' : ''}`}>
                             <a href='#success-stories' className='hover:text-orange-600'>
                                 5 Success Stories Depicting Autonomous Retail Transformation
                             </a>
                         </li>
                         <hr />
-                        <li className={`${activeSection === 'stores-sccess' ? 'font-bold' : ''}`}>
+                        <li className={`${activeSection === 'stores-sccess' ? 'md:font-bold' : ''}`}>
                             <a href='#stores-sccess' className='hover:text-orange-600'>
                                 What Make These Stores Successful?
                             </a>
                         </li>
                         <hr />
-                        <li className={`${activeSection === 'conclusion' ? 'font-bold' : ''}`}>
+                        <li className={`${activeSection === 'conclusion' ? 'md:font-bold' : ''}`}>
                             <a href='#conclusion' className='hover:text-orange-600'>
                                 Conclusion
                             </a>
