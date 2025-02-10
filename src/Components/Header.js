@@ -16,7 +16,7 @@ const Header = ( {menuLinks} ) => {
             <div className="flex justify-between items-center">
                 <div className="flex items-center flex-shrink-0">
                     <img src={logo} className='h-10 w-10 mr-2 rounded-full' alt="logo" />
-                    <span className="text-xl tracking-tighter bg-gradient-to-br from-orange-200 to-orange-500 text-transparent bg-clip-text">aRjun</span>
+                    <span className="text-xl tracking-tighter bg-gradient-to-br from-orange-200 to-orange-500 text-transparent bg-clip-text">bLogs</span>
                 </div>
                 <ul className='hidden lg:flex ml-14 space-x-12'>
                     {menuLinks.map((menu, index) => (
@@ -40,7 +40,7 @@ const Header = ( {menuLinks} ) => {
                 </div>
             </div>
             {mobileDrawerOpen && (
-                <div className="fixed right-0 bg-black text-white z-20 w-full p-12 flex flex-col justify-end items-end text-lg mt-4 lg:hidden">
+                <div className="fixed right-0 bg-black text-white z-20 w-full p-12 flex flex-col justify-end items-end text-lg mt-3 border-t lg:hidden">
                     <ul className="mb-10 text-center space-y-5">
                         {menuLinks.map((menu, index) => (
                             <li className={`hover:text-orange-700 ${menu.isActive ? 'text-orange-700' : ''}`}>

@@ -3,10 +3,36 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { IoIosSearch } from "react-icons/io";
+import { IoIosArrowDropdown } from "react-icons/io";
 
 const BlogList = ( {blogList} ) => {
   return (
-    blogList.map((blog, index) => (
+    <>
+        <div className='md:flex md:flex-wrap p-5 mt-5'>
+            <div className="relative w-full xl-w-auto xl:flex-1 xl:pr-4">
+                <input 
+                    type="search"
+                    id="search"
+                    className="p-3 border-b w-full pr-10 outline-none"
+                    placeholder="Search here"
+                />
+                <IoIosSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-orange-600 text-3xl" />
+            </div>
+            <div className='relative md:pr-2 mt-4 w-full md:w-1/2 xl-w-auto xl:flex-1 xl:mt-0'>
+                <select className='p-3 border-b w-full max-w-full overflow-hidden mb-2 appearance-none outline-none rounded-none'>
+                    <option>Topic</option>
+                </select>
+                <IoIosArrowDropdown className='absolute right-3 top-1/2 transform -translate-y-1/2 text-2xl' />
+            </div>
+            <div className='relative md:pl-2 mt-4 w-full md:w-1/2 xl-w-auto xl:flex-1 xl:mt-0'>
+                <select className='p-3 border-b w-full mb-2 appearance-none outline-none rounded-none'>
+                    <option>All Categories</option>
+                </select>
+                <IoIosArrowDropdown className='absolute right-3 top-1/2 transform -translate-y-1/2 text-2xl' />
+            </div>
+        </div>
+        {blogList.map((blog, index) => (
         <div className='md:flex md:flex-wrap mb-20 mt-10 md:space-x-8 p-5 hover:lg:shadow-lg shadow-lg lg:shadow-none' key={index}>
             <div className='flex-shrink-0 md:w-1/2'>
                 <Link to="/blogDetails">
@@ -58,7 +84,9 @@ const BlogList = ( {blogList} ) => {
                 </div>
             </div>
         </div>
-    )));
-}
+        ))};
+    </>
+    
+)}
 
 export default BlogList

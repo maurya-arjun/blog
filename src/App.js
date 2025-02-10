@@ -33,7 +33,7 @@ const blogList = [
         blogTitle: 'What is Lorem Ipsum?',
         blogPublishDate: '2 Jaunary, 2025',
         blogDescription: 'The retail industry is undergoing a seismic transformation driven by technological advancements and changing consumer expectations. Autonomous stores, which eliminate the need for traditional checkout processes The retail industry is undergoing a seismic transformation driven by technological advancements and changing consumer expectations. Autonomous stores, which eliminate the need for traditional checkout processes ',
-        publishBy: 'Person Name'
+        publishBy: 'Person Name Person Name Person Name'
     },
     {
         blogImage: blogImage1,
