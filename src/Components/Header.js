@@ -20,7 +20,7 @@ const Header = ( {menuLinks} ) => {
                 </div>
                 <ul className='hidden lg:flex ml-14 space-x-12'>
                     {menuLinks.map((menu, index) => (
-                        <li className={`hover:text-orange-700 ${menu.isActive ? 'text-orange-700' : ''}`}>
+                        <li key={index} className={`hover:text-orange-700 ${menu.isActive ? 'text-orange-700' : ''}`}>
                             <Link to={menu.href} > {menu.label} </Link>
                         </li>
                     ))}

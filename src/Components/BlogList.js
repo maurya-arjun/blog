@@ -1,18 +1,30 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import FilterSearch from './FilterSearch';
+import { motion } from 'framer-motion';
 
 const BlogList = ( {blogList} ) => {
     const [blog, setBlogList] = useState(blogList);
     
+    const fadeInVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    };
+
   return (
     <>
         <FilterSearch setBlogList={setBlogList} blogList={blogList} />
         {blog.length > 0 ? (blog.map((blog, index) => (
-            <div className='md:flex md:flex-wrap mb-20 mt-10 md:space-x-8 p-5 hover:lg:shadow-lg shadow-lg lg:shadow-none' key={index}>
+            <motion.div className='md:flex md:flex-wrap mb-20 mt-10 md:space-x-8 p-5 hover:lg:shadow-lg shadow-lg lg:shadow-none'
+                key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.2 }} // Ensures animation triggers when the element is in view
+                variants={fadeInVariants}
+            >
                 <div className='flex-shrink-0 md:w-1/2'>
                     <Link to="/blogDetails">
                         <img src={blog.blogImage} alt='Blog-Image' className='w-full' />
@@ -62,7 +74,7 @@ const BlogList = ( {blogList} ) => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         ))) : 
             <div className='text-center mt-10'>
                 <h3 className='text-red-600'>Oops! No result found 🙁</h3>
