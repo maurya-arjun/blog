@@ -66,25 +66,25 @@ const BlogDetails = () => {
                 <div className='m-5 md:w-[30%] md:order-2 md:top-0 md:left-0 md:h-screen'>
                     <h1 className='text-4xl mb-5'>Table of Content</h1>
                     <ul className='list-disc ml-5 space-y-3 text-lg'>
-                        <li className={`${activeSection === 'overview' ? 'md:font-bold' : ''}`}>
+                        <li className={`${activeSection === 'overview' ? 'md:font-bold bg-neutral-300 p-2 border-l-4 border-l-orange-500' : ''}`}>
                             <a href='#overview' className='hover:text-orange-600'>
                                 Overview
                             </a>
                         </li>
                         <hr />
-                        <li className={`${activeSection === 'success-stories' ? 'md:font-bold' : ''}`}>
+                        <li className={`${activeSection === 'success-stories' ? 'md:font-bold bg-neutral-300 p-2 border-l-4 border-l-orange-500' : ''}`}>
                             <a href='#success-stories' className='hover:text-orange-600'>
                                 5 Success Stories Depicting Autonomous Retail Transformation
                             </a>
                         </li>
                         <hr />
-                        <li className={`${activeSection === 'stores-sccess' ? 'md:font-bold' : ''}`}>
+                        <li className={`${activeSection === 'stores-sccess' ? 'md:font-bold bg-neutral-300 p-2 border-l-4 border-l-orange-500' : ''}`}>
                             <a href='#stores-sccess' className='hover:text-orange-600'>
                                 What Make These Stores Successful?
                             </a>
                         </li>
                         <hr />
-                        <li className={`${activeSection === 'conclusion' ? 'md:font-bold' : ''}`}>
+                        <li className={`${activeSection === 'conclusion' ? 'md:font-bold bg-neutral-300 p-2 border-l-4 border-l-orange-500' : ''}`}>
                             <a href='#conclusion' className='hover:text-orange-600'>
                                 Conclusion
                             </a>
