@@ -22,7 +22,7 @@ const BlogList = ( {blogList} ) => {
                 key={index}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.2 }} // Ensures animation triggers when the element is in view
+                viewport={{ once: true, amount: 0.2 }} // Ensures animation triggers when the element is in view
                 variants={fadeInVariants}
             >
                 <div className='flex-shrink-0 md:w-1/2'>
